@@ -1,0 +1,145 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.first-row {
+    flex: 1;
+}
+
+.second-row {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: var(--text-xxl);
+    color: var(--text-color);
+    text-align: center;
+    padding-bottom: 0.5rem;
+}
+
+.box {
+    background-color: var(--primary-color);
+    border-radius: 2.5rem;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    padding: 1rem 3rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.item:hover {
+    transform: scale(1.05);
+}
+
+.icon-container {
+    background:rgba(201, 220, 211, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.icon-container:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: rotate(10deg);
+}
+
+.icon {
+    height: 3.5rem;
+    width: 3.5rem;
+    object-fit: cover;
+}
+
+.skill-container {
+    width: 70vw;
+    height: auto;
+}
+
+.name {
+    color: var(--text-color);
+    font-size: var(--text-md);
+    margin: 0;
+    padding-top: 0.2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .second-row {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .box {
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+    
+    .icon-container {
+        width: 5rem;
+        height: 5rem;
+    }
+    
+    .icon {
+        height: 3rem;
+        width: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .box {
+        gap: 1.5rem;
+        padding: 1rem;
+        border-radius: 1.5rem;
+    }
+    
+    .icon-container {
+        width: 4rem;
+        height: 4rem;
+    }
+    
+    .icon {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+    
+    .name {
+        font-size: var(--text-md);
+    }
+}
