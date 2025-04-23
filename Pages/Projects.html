@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mohammad</title>
+        <link rel="stylesheet" href="../styles/default.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <nav>
+            <a href="../index.html" class="home-nav nav-item">Home</a>
+            <a href="./Projects.html" class="project-nav nav-item page">Projects</a>
+            <a href="./Resume.html" class="resume-nav nav-item">Resume</a>
+        </nav>
+        <main>
+            <button class="prev-project proj-btn" onclick="changeProject(-1)">
+                <img
+                    src="../Images/Project/buttons/prev.svg"
+                    alt="previous"
+                    class="prev-btn btn"
+                />
+            </button>
+
+            <div class="projects-carousel">
+                <!-- Project 1 - UNO Game -->
+                <div class="project-item active">
+                    <div class="img-box">
+                        <img
+                            src="../Images/Project/imgs/uno.png"
+                            alt="Uno Game"
+                            class="project-img"
+                        />
+                    </div>
+                    <div class="txt-box">
+                        <p class="txt-head txt">Uno Game</p>
+                        <p class="txt-body txt">
+                            Java-based UNO game with socket programming
+                            supporting user authentication, server logging, and
+                            multi-threaded gameplay for players.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 2 - Jungle-card-game -->
+                <div class="project-item">
+                    <div class="img-box">
+                        <img
+                            src="../Images/Project/imgs/Jungle-card-game.png"
+                            alt="Jungle-card-game"
+                            class="project-img"
+                        />
+                    </div>
+                    <div class="txt-box">
+                        <p class="txt-head txt">Jungle Card Game</p>
+                        <p class="txt-body txt">
+                            A strategic animal card battle game where players
+                            collect and battle with animal cards. lets have fun!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 3 - Sudoku Solver -->
+                <div class="project-item">
+                    <div class="img-box">
+                        <img
+                            src="../Images/Project/imgs/Sudoko-solver.png"
+                            alt="Sudoku-Solver"
+                            class="project-img"
+                        />
+                    </div>
+                    <div class="txt-box">
+                        <p class="txt-head txt">Sudoku Solver</p>
+                        <p class="txt-body txt">
+                            Java-based Sudoku Solver that takes a 9x9 Sudoku
+                            board as input and solves it using a backtracking
+                            algorithm. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="next-project proj-btn" onclick="changeProject(1)">
+                <img
+                    src="../Images/Project/buttons/next.svg"
+                    alt="next"
+                    class="next-btn btn"
+                />
+            </button>
+        </main>
+        <footer>
+            <a
+                href="https://github.com/MuhammadHamidi"
+                class="github-box footer-box"
+                aria-label="GitHub"
+                target="_blank"
+            >
+                <img
+                    src="../Images/Socials/github-svgrepo-com.svg"
+                    class="github-icon footer-item"
+                />
+            </a>
+            <a
+                href="mailto:mohammadhamidi055@gmail.com"
+                class="email-box footer-box"
+                aria-label="Email"
+            >
+                <img
+                    src="../Images/Socials/mail-svgrepo-com.svg"
+                    class="email-icon footer-item"
+                />
+            </a>
+            <a
+                href="tel:+989377381293"
+                class="phone-box footer-box"
+                aria-label="Phone Number"
+            >
+                <img
+                    src="../Images/Socials/phone-call-svgrepo-com.svg"
+                    class="phone-icon footer-item"
+                />
+            </a>
+        </footer>
+
+        <script>
+            let currentProject = 0;
+            const projects = document.querySelectorAll(".project-item");
+
+            function showProject(index) {
+                projects.forEach((project) => {
+                    project.classList.remove("active");
+                });
+
+                projects[index].classList.add("active");
+            }
+
+            function changeProject(direction) {
+                currentProject += direction;
+
+                if (currentProject >= projects.length) {
+                    currentProject = 0;
+                } else if (currentProject < 0) {
+                    currentProject = projects.length - 1;
+                }
+
+                showProject(currentProject);
+            }
+
+            showProject(0);
+        </script>
+    </body>
+</html>
