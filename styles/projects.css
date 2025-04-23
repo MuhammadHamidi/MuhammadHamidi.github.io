@@ -1,0 +1,132 @@
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.projects-carousel {
+    position: relative;
+    max-width: 850px;
+    height: calc(50vh + 5rem);
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+}
+
+.project-item {
+    position: absolute;
+    height: calc(65vh + 5rem);
+    min-height: 40vh;
+    width: calc(60vw + 5rem);
+    max-width: 850px;
+    border-radius: 2rem;
+    background-color: var(--primary-color);
+    display: flex;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.project-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.project-item.active {
+    opacity: 1;
+    position: relative;
+}
+
+.img-box {
+    flex: 1;
+    min-height: 60%;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    max-width: 850px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.txt-box {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem 0 2rem;
+    text-align: justify;
+    overflow: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+.txt {
+    color: var(--text-color);
+}
+
+.txt-body {
+    font-weight: 400;
+    font-size: var(--text-lg);
+    line-height: 2;
+}
+
+.txt-head {
+    font-size: var(--text-xl);
+    margin-bottom: 1rem;
+    line-height: 0;
+}
+
+.prev-project {
+    border-radius: 2rem 0 0 2rem;
+    border-right: none;
+}
+.next-project {
+    border-radius: 0 2rem 2rem 0;
+    border-left: none;
+}
+
+.btn {
+    width: 30px;
+    height: 30px;
+}
+
+.proj-btn {
+    width: calc(0.1 * (60vw + 5rem));
+    height: calc(0.7 * (50vh + 5rem));
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--primary-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.proj-btn:hover {
+    background-color: rgba(33, 87, 74, 0.827);
+    transform: scale(1.02);
+}
+
+/* Full screen adjustments */
+@media (min-width: 1200px) {
+    .img-box {
+        min-height: 70%;
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 800px) {
+    .project-item {
+        position: absolute;
+        height: calc(50vh + 5rem);
+    }
+
+    .img-box {
+        min-height: 50%;
+    }
+}
